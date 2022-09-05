@@ -1,0 +1,139 @@
+$font : #dbfbe6;
+$fontdark: #4a504f;
+$button : #f28888;
+$darker: #27323A;
+$dark: #435055;
+$light: #29A19C;
+$lighter: #A3F7BF;
+
+
+.formContainer {
+    background-color: $dark;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .formWrapper {
+        background-color: $light;
+        padding: 20px 60px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            input {
+                background-color: $light;
+                padding: 15px;
+                width: 250px;
+                border: none;
+                border-bottom: 1px solid $dark;
+                &::placeholder {
+                    color: white;
+                }
+            }
+        }
+        .logo {
+            color: $font;
+            font-weight: bold;
+            font-size: 24pt;
+        }
+        .title {
+            color: $font;
+            font-size: 12pt;
+        }
+        
+        button {
+            background-color: $font;
+            color: $fontdark;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: $font;
+            font-size: 12pt;
+            cursor: pointer;
+
+            img {
+                width: 32px;
+            }
+        }
+
+        p {
+            color: $fontdark;
+            font-size: 12pt;
+            margin-top: 10px;
+        }
+    }
+}
+
+.home {
+    background-color: $dark;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        border-radius: 15px;
+        width: 65%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+
+        .sidebar {
+            background-color: $light;
+            flex: 1;
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                background-color: $darker;
+                color: $font;
+                height: 50px;
+                padding: 10px;
+                justify-content: space-between;
+
+                .logo {
+                    font-weight: bold;
+                }
+
+                .user {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                img {
+                    background-color: $font;
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50%;
+                }
+
+                button {
+                  background-color: $button;
+                  color: white;
+                  font-size: 10px;
+                  border: none;
+                  cursor: pointer;
+                }
+            }
+        }
+
+        .chat {
+            background-color: $lighter;
+            flex: 2;
+        }
+    }
+}
