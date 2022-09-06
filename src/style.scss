@@ -12,6 +12,74 @@ $outline: #595958;
 $chatyou: rgb(88, 190, 230);
 $chatthem: rgb(159, 180, 188);
 
+#dark {
+    *{
+        p {
+            color: white;
+        }
+        span {
+            color: white;
+        }
+
+        input {
+            color: white;
+            background-color: #2a2e2e;
+        }
+    }
+
+
+    .home {
+        background-color: #151717;
+
+        .navbar {
+            background-color: #272c36;
+        }
+    
+        .chatInfo {
+            background-color: #272c36;
+        }
+        
+        .messages, .userChat{
+            background-color: #2a2e2e;
+        }
+    
+        .input {
+            background-color: #3a3f3f;
+            input {
+                background-color: #3a3f3f;
+            }
+        }
+    }
+
+    .formContainer {
+        background-color: #151717;
+
+        .formWrapper {
+            background-color: #272c36;
+
+            input {
+                &::placeholder {
+                    color: white;
+                }
+            }
+
+            button {
+                background-color: #151717;
+                color:#E8E8E8;
+
+                &:hover {
+                    background-color: #4b5849;
+                }
+            }
+        }
+    }
+
+    .switch {
+        background-color: #151717;
+    }
+}
+
+
 // @include tablet {
 //     display: none;
 // }
@@ -365,5 +433,15 @@ $chatthem: rgb(159, 180, 188);
     }
 }
 
+//switch
+
+.switch {
+    position: absolute;
+    right: 0%;
+    padding: 10px;
+    background-color: $dark;
+    display: flex;
+    justify-content: flex-end;
+}
 
 // Animations
