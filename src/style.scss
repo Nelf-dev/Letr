@@ -1,10 +1,13 @@
 $font : #dbfbe6;
 $fontdark: #4a504f;
 $button : #f28888;
+$buttonyes : rgb(132, 183, 130); 
 $darker: #27323A;
 $dark: #435055;
 $light: #29A19C;
 $lighter: #A3F7BF;
+$chatyou: rgb(88, 190, 230);
+$chatthem: rgb(159, 180, 188);
 
 
 .formContainer {
@@ -184,6 +187,120 @@ $lighter: #A3F7BF;
         .chat {
             background-color: $lighter;
             flex: 2;
+
+            .chatInfo {
+                height: 50px;
+                padding: 10px;
+                background-color: $light;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $font;
+            }
+
+            .chatIcons {
+                display: flex;
+                gap: 10px;
+
+                img {
+                    height: 24px;
+                    cursor: pointer;
+                }
+            }
+
+            .messages {
+                background-color: $font;
+                padding: 10px;
+                height: calc( 100% - 160px );
+                overflow: scroll;
+
+                .message {
+                    display: flex;
+                    gap: 20px;
+
+                    .messageInfo {
+                        display: flex;
+                        flex-direction: column;
+                        color: gray;
+                        font-weight: 300;
+                        margin-bottom: 20px;
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                    .messageContent {
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p {
+                            background-color: white;
+                            padding: 10px 20px;
+                            border-radius: 0px 10px 10px 10px;
+                            max-width: max-content;
+                        }
+
+                        img {
+                            width: 50%;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    &.owner {
+                        flex-direction: row-reverse;
+                        .messageContent {
+                            align-items: flex-end;
+                            p {
+                                background-color: $chatyou;
+                                color: white;
+                                border-radius: 10px 0px 10px 10px;
+                            }
+                        }   
+                    }
+                }
+            }
+
+            .input {
+                height: 50px;
+                background-color: white;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    font-size: 18pt;
+                    color: $fontdark;
+
+                    &::placeholder {
+                        color: lightgray;
+                    }
+                }
+
+                .send {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        height: 24px;
+                        cursor: pointer;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 10px 15px;
+                        color: white;
+                        background-color: $buttonyes;
+                    }
+                }
+            }
         }
     }
 }
