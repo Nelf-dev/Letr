@@ -9,6 +9,25 @@ $lighter: #A3F7BF;
 $chatyou: rgb(88, 190, 230);
 $chatthem: rgb(159, 180, 188);
 
+@mixin mobile {  // RESPONSIVE DESIGN
+    @media  screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media  screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media  screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+
 
 .formContainer {
     background-color: $dark;
@@ -110,6 +129,9 @@ $chatthem: rgb(159, 180, 188);
 
                 .logo {
                     font-weight: bold;
+                    @include tablet {
+                        display: none;
+                    }
                 }
 
                 .user {
