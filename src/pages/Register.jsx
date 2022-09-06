@@ -4,10 +4,12 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
-
     const [err,setErr] = useState(false)
+    const navigate = useNavigate()
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         const displayName = e.target[0].value;
@@ -17,9 +19,7 @@ const Register = () => {
 
     try{
         const res = await createUserWithEmailAndPassword(auth, email, password)
-
         const storageRef = ref(storage, displayName);
-
         const uploadTask = uploadBytesResumable(storageRef, file);
 
         uploadTask.on(
@@ -38,7 +38,11 @@ const Register = () => {
                     displayName,
                     email,
                     photoURL: downloadURL
-                })
+                });
+
+                await setDoc(doc(db, "userChats", res.user.uid), {});
+                navigate("/");
+
             });
         }
         );
@@ -46,7 +50,7 @@ const Register = () => {
         setErr(true);
     }
     
-    }
+    };
 
     return (
         <div className='formContainer'>
@@ -65,7 +69,7 @@ const Register = () => {
                     <button>Sign Up</button>
                     {err && <span>Something went wrong</span>}
                 </form>
-                <p>Have an account? Login</p>
+                <p>Have an account? <Link to="/login">Login</Link></p>
             </div>
         </div>
     );
