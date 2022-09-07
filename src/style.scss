@@ -481,3 +481,19 @@ $inputdark: #3a3f3f;
 }
 
 // Animations
+.wave span {
+    color: #fff;
+    text-transform: uppercase;
+    animation: wave 3s infinite;
+    animation-delay: calc(.1s * var(--i));
+  }
+  
+  @keyframes wave {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }
+

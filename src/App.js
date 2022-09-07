@@ -2,6 +2,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import "./style.scss";
+import "./style.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext, createContext, useState } from "react";
 import { AuthContext } from "./context/AuthContext";
