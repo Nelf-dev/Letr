@@ -18,10 +18,15 @@ const Search = () => {
 
     try {
       const querySnapshot = await getDocs(q);
+      setErr(false);
+      if (querySnapshot.size === 0){
+        setErr(true);
+      }
       querySnapshot.forEach((doc) => {
         setUser(doc.data()); 
       });
-    } catch (err) { 
+    } catch (err) {
+      console.log(err)
       setErr(true);
     }
   };
@@ -78,15 +83,15 @@ const Search = () => {
           value={username}
         />
       </div>
-      {err && <span>User not found!</span>}
-      {user && (
+      {err && <p className="error">User not found!</p>}
+      {user &&
         <div className="userChat" onClick={ handleSelect }>
           <img src={ user.photoURL } alt="" />
           <div className="userChatInfo">
             <span>{ user.displayName }</span>
           </div>
         </div>
-      )}
+      }
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useContext, useState,useEffect } from 'react';
 import { ChatContext } from '../context/ChatContext';
-// import userEvent from '@testing-library/user-event';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 import Message from "./Message"
@@ -27,7 +26,6 @@ const Messages = () => {
             {messages.map(m=>(
                 <Message message={m}/>
             ))}
-
         </div>
     );
 }
