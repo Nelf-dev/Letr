@@ -1,8 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
-import Add from '../img/addimg.png'
-import attach from '../img/attach.png'
+import Add from '../img/addimg.png';
+import attach from '../img/attach.png';
+import { async } from '@firebase/util';
+import { db, storage } from '../firebase';
+import { arrayUnion, doc, updateDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
+import { v4 as uuid } from 'uuid';
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Input = () => {
     const [ text, setText ] = useState("");
@@ -11,14 +16,45 @@ const Input = () => {
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext)
 
-    const handleSend = () => {
+    const handleSend = async () => {
 
         if(img) {
 
-        } else {
+            const storageRef = ref(storage, uuid());
 
+            const uploadTask = uploadBytesResumable(storageRef, img);
+
+            uploadTask.on(
+        
+                (error) => {
+                    // setErr(true);
+                }, 
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
+                        await updateDoc(doc(db, "chats", data.chatId), {
+                            messages: arrayUnion({
+                                id: uuid(),
+                                text,
+                                senderId: currentUser.uid,
+                                date: Timestamp.now(),
+                                img: downloadURL
+                            }),
+                        });
+                    });
+                }
+            );
+
+        } else {
+            await updateDoc(doc(db, "chats", data.chatId), {
+                messages: arrayUnion({
+                    id: uuid(),
+                    text,
+                    senderId: currentUser.uid,
+                    date: Timestamp.now(),
+                }),
+            });
         }
-    }
+    };
 
     return (
         <div className="input">
