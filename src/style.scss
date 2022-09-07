@@ -250,10 +250,12 @@ $inputdark: #3a3f3f;
         .sidebar {
             background-color: $light;
             border-right: 0.5px black solid;
+            overflow: scroll;
             flex: 1;
 
             .navbar {
                 display: flex;
+                position: static;
                 align-items: center;
                 background-color: $darker;
                 color: $lighter;
