@@ -35,7 +35,12 @@ const Login = () => {
     return (
         <div className='formContainer'>
             <div className="formWrapper">
-                <span className="logo" >Letr</span>
+            <div class="wave logo">
+                <span style={{"--i":1}}>L</span>
+                <span style={{"--i":2}}>E</span>
+                <span style={{"--i":3}}>T</span>
+                <span style={{"--i":4}}>R</span>
+            </div>
                 <span className="title">Login</span>
                 <form onSubmit={handleSubmit}>
                     <input type="email" placeholder="Email"/>
