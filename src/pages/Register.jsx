@@ -8,7 +8,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from "../context/AuthContext"
 
 const Register = () => {
-    const [err,setErr] = useState(false)
+    const [err,setErr] = useState(null)
     const navigate = useNavigate()
     const { currentUser } = useContext(AuthContext) 
 
@@ -56,7 +56,7 @@ const Register = () => {
         }
         );
     }catch(err){
-        setErr(true);
+        setErr(err);
     }
     
     };
@@ -81,7 +81,7 @@ const Register = () => {
                         <span>Add an Avatar</span>
                     </label>
                     <button>Sign Up</button>
-                    {err && <span>Something went wrong</span>}
+                    {err && <span>{err.message}</span>}
                 </form>
                 <p>Have an account? <Link to="/login">Login</Link></p>
             </div>
