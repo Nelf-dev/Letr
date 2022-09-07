@@ -19,9 +19,9 @@ const Search = () => {
     try {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        setUser(doc.data());
+        setUser(doc.data()); 
       });
-    } catch (err) {
+    } catch (err) { 
       setErr(true);
     }
   };
@@ -31,6 +31,7 @@ const Search = () => {
   };
 
   const handleSelect = async () => {
+    //check whether the group(chats in firestore) exists, if not create
     const combinedId =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
