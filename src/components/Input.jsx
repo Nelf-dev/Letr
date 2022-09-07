@@ -54,6 +54,23 @@ const Input = () => {
                 }),
             });
         }
+
+        await updateDoc(doc(db, "userChats", currentUser.uid), {
+            [data.chatId + ".lastMessage"]: {
+                text,
+            },
+            [data.chatId + ".date"]: serverTimestamp(),
+        });
+
+        await updateDoc(doc(db, "userChats", data.user.uid), {
+            [data.chatId + ".lastMessage"]: {
+                text,
+            },
+            [data.chatId + ".date"]: serverTimestamp(),
+        });
+
+        setText("");
+        setImg(null);
     };
 
     return (
