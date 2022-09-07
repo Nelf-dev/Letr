@@ -25,7 +25,7 @@ const Search = () => {
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
       });
-    } catch (err) { // function does not get to this point for some reason
+    } catch (err) {
       console.log(err)
       setErr(true);
     }
@@ -82,7 +82,7 @@ const Search = () => {
           value={username}
         />
       </div>
-      {err && <span>User not found!</span>}
+      {err && <p className="error">User not found!</p>}
       {user &&
         <div className="userChat" onClick={ handleSelect }>
           <img src={ user.photoURL } alt="" />
