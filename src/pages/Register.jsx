@@ -12,11 +12,11 @@ const Register = () => {
     const navigate = useNavigate()
     const { currentUser } = useContext(AuthContext) 
 
-    useEffect(() => { //does not allow register again if not logged out
-        if (currentUser) {
-            navigate("/");
-        }
-    }, []);
+    // useEffect(() => { //does not allow register again if not logged out
+    //     if (currentUser) {
+    //         navigate("/");
+    //     }
+    // }, []);
 
 
     const handleSubmit = async (e) => {
@@ -40,13 +40,13 @@ const Register = () => {
             getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
                 await updateProfile(res.user,{
                     displayName,
-                    photoURL: downloadURL ? downloadURL : ''
+                    photoURL: downloadURL ? downloadURL : 'https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36'
                 });
                 await setDoc(doc(db, "users", res.user.uid),{
                     uid: res.user.uid,
                     displayName,
                     email,
-                    photoURL: downloadURL ? downloadURL : ''
+                    photoURL: downloadURL ? downloadURL : 'https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36'
                 });
 
                 await setDoc(doc(db, "userChats", res.user.uid), {});
@@ -64,7 +64,7 @@ const Register = () => {
     return (
         <div className='formContainer'>
             <div className="formWrapper">
-                <div class="wave logo">
+                <div className="wave logo">
                     <span style={{"--i":1}}>L</span>
                     <span style={{"--i":2}}>E</span>
                     <span style={{"--i":3}}>T</span>
@@ -77,7 +77,7 @@ const Register = () => {
                     <input type="password" placeholder="Password"/>
                     <input style={{display:"none"}} type="file" id="file"/>
                     <label htmlFor="file">
-                        <img src={Add} />
+                        <img src={Add} alt="No Picture"/>
                         <span>Add an Avatar</span>
                     </label>
                     <button>Sign Up</button>
