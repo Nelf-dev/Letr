@@ -232,6 +232,10 @@ $inputdark: #3a3f3f;
     align-items: center;
     justify-content: center;
     
+    #searcheduser {
+        z-index: 999;
+        background-color: #cfcfcf;
+    }
 
     .container {
         border-radius: 15px;
@@ -280,6 +284,7 @@ $inputdark: #3a3f3f;
 
                 button {
                     background-color: $button;
+                    border-radius: 7px;
                     color: white;
                     font-size: 10px;
                     border: none;
