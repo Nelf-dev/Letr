@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Add from "../img/addimg.png"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
 import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from "../context/AuthContext"
 
 const Register = () => {
     const [err,setErr] = useState(false)
     const navigate = useNavigate()
+    const { currentUser } = useContext(AuthContext) 
+
+    useEffect(() => { //does not allow register again if not logged out
+        if (currentUser) {
+            navigate("/");
+        }
+    }, []);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
