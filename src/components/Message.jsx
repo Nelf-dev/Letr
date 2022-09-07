@@ -16,13 +16,13 @@ const Message = ({ message }) => {
         <div ref={ ref } className={ `message ${ message.senderId === currentUser.uid && "owner" }` }>
             <div className="messageInfo">
                 <img src= { message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL }
-                alt="profile picture" 
+                alt="messageInfo" 
                 />
                 <span>Just Now</span>
             </div>
             <div className="messageContent">
                 <p>{ message.text }</p>
-                { message.img && <img src= { message.img } alt="profile picture" />}
+                { message.img && <img src= { message.img } alt="messageContent" />}
             </div>
         </div>
     );

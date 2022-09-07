@@ -1,22 +1,22 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
 
-import { AuthContext } from "../context/AuthContext";
+// import { AuthContext } from "../context/AuthContext";
 
 
 const Login = () => {
 
     const [err,setErr] = useState(false)
     const navigate = useNavigate()
-    const { currentUser } = useContext(AuthContext)
+    // const { currentUser } = useContext(AuthContext)
 
-    useEffect(() => { //does not allow login again if not logged out
-        if (currentUser) {
-            navigate("/");
-        }
-    }, []);
+    // useEffect(() => { //does not allow login again if not logged out
+    //     if (currentUser) {
+    //         navigate("/");
+    //     }
+    // }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault()
