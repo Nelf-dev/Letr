@@ -232,6 +232,10 @@ $inputdark: #3a3f3f;
     align-items: center;
     justify-content: center;
     
+    #searcheduser {
+        z-index: 999;
+        background-color: #cfcfcf;
+    }
 
     .container {
         border-radius: 15px;
