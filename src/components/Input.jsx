@@ -15,7 +15,9 @@ const Input = () => {
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext)
 
-    const handleSend = async () => {
+    const handleSend = async (e) => {
+
+        e.preventDefault()
 
         if(img) {
 
@@ -73,7 +75,7 @@ const Input = () => {
     };
 
     return (
-        <div className="input">
+        <form onSubmit={ handleSend } className="input">
             <input type="text" 
             placeholder="Type something..." 
             onChange={ e => setText(e.target.value) } 
@@ -87,7 +89,7 @@ const Input = () => {
                 </label>
                 <button onClick={ handleSend }>Send</button>
             </div>
-        </div>
+        </form>
     );
 }
 
