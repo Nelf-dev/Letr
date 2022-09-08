@@ -177,6 +177,7 @@ $inputdark: #3a3f3f;
         gap: 10px;
         align-items: center;
         box-shadow: 1px 1px 1px #000000;
+        max-width: 375px;
         form {
             display: flex;
             flex-direction: column;
@@ -545,10 +546,13 @@ $inputdark: #3a3f3f;
     text-align: center;
     justify-content: center;
 
+
+
     .card {
         padding: 10px;
         border-radius: 10px;
         background-color: $light;
+        width: 375px;
 
         p {
             padding: 10px 0;
@@ -602,10 +606,19 @@ $inputdark: #3a3f3f;
                 background-color: #4b5849;
                 color: $lighter;
             }
+            
         }
 
-        #file {
-            margin-left: 5em;
+        .fileinput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                margin-right: 0.5em;
+            }
         }
     }
 
