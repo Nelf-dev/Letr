@@ -54,7 +54,7 @@ const Chats = () => {
             );
         }
     }
-}
     return displayChats();
+}
 
 export default Chats;
