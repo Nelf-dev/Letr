@@ -11,10 +11,10 @@ const Sidebar = () => {
     const handleToggle = () => {
         setMobile(!mobile)
     }
-//
+//{ mobile ? "sidebar active" : "sidebar" } onChange={ handleToggle }
 
     return (
-        <div className={ mobile ? "sidebar active" : "sidebar" } onChange={ handleToggle }>
+        <div className="sidebar">
             <Navbar />
             <Search />
             <Chats />
