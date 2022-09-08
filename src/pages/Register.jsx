@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Add from "../img/addimg.png"
+import Add from "../img/addimg.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -8,6 +8,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
     const [err,setErr] = useState(null)
+    const [img, setImg] = useState(null)
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -78,10 +79,10 @@ const Register = () => {
                     <input type="text" placeholder="Display name"/>
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
-                    <input style={ {display:"none"} } type="file" id="file"/>
+                    <input style={ {display:"none"} } type="file" id="file" onChange={(e)=> {setImg(e.target.value.replace(/^.*[\\\/]/, ''))}}/>
                     <label htmlFor="file">
                         <img src={Add} alt="displayFile"/>
-                        <span>Add an Avatar</span>
+                        <span>{img === null ? "Add Image" : img }</span>
                     </label>
                     <button>Sign Up</button>
                     <div className="fberr">

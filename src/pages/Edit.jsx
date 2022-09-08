@@ -1,13 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { getAuth, updateProfile } from "firebase/auth";
 import { db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore"; 
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { Link } from 'react-router-dom';
+import Add from "../img/addimg.png";
 
 const Edit = () => {
     const { currentUser } = useContext(AuthContext);
+    const [img, setImg] = useState(null)
     const auth = getAuth()
 
     const handleSubmit = async(e) => {
@@ -75,9 +77,13 @@ const Edit = () => {
                 </div>
                 <div className="forms">
                     <form onSubmit={ handleSubmit }>
-                    <div>
-                        <input type="file" id="file"/>
-                    </div>
+                        <div className="fileinput">
+                            <input style={ {display:"none"} } type="file" id="file" onChange={(e)=> {setImg(e.target.value.replace(/^.*[\\\/]/, ''))}}/>
+                            <label htmlFor="file">
+                                <img src={Add} alt="displayFile"/>
+                                <span>{img === null ? "Add Image" : img }</span>
+                            </label>
+                        </div>
                     <div>
                         <p>Display name</p>
                     </div>
