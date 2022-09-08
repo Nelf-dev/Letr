@@ -163,6 +163,11 @@ $inputdark: #3a3f3f;
     align-items: center;
     justify-content: center;
 
+    #err {
+        text-align: center;
+        color: red;
+    }
+
     .formWrapper {
         background-color: $light;
         padding: 20px 60px;
@@ -171,6 +176,7 @@ $inputdark: #3a3f3f;
         flex-direction: column;
         gap: 10px;
         align-items: center;
+        box-shadow: 1px 1px 1px #000000;
         form {
             display: flex;
             flex-direction: column;
@@ -202,6 +208,10 @@ $inputdark: #3a3f3f;
         .title {
             color: $font;
             font-size: 12pt;
+        }
+        .fberr {
+            width: 250px;
+            text-align: center;
         }
         
         button {
