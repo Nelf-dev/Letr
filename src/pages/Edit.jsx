@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { getAuth, reload, updateProfile } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 import { db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore"; 
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { Link } from 'react-router-dom';
 
 const Edit = () => {
     const { currentUser } = useContext(AuthContext);
@@ -63,11 +64,12 @@ const Edit = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-            <img className="editpfp" src={currentUser.photoURL} alt="displayicon" />
+            <img className="editpfp" src={currentUser.photoURL} alt="displayicon"/>
             <label htmlFor="file">Change your profile picture</label>
             <input type="file" id="file"/>
             <input type="text" placeholder="Display name" defaultValue={currentUser.displayName} />
             <button>Update Profile</button>
+            <p><Link to="/">Home</Link></p>
             </form>
         </div>
     );
