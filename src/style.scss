@@ -254,7 +254,7 @@ $inputdark: #3a3f3f;
             flex: 1;
 
             @media  screen and (max-width: 480px) {
-                display: none;
+                visibility: hidden;
             }
 
             .navbar {

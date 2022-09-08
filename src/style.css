@@ -44,7 +44,7 @@
 .sidebar.active {
     position: absolute;
     margin-top: 4.3em;
-    display: block;
+    visibility: visible!;
     width: 65%;
     height: 73%;
     z-index: 999;
