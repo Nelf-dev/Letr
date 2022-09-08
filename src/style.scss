@@ -92,6 +92,22 @@ $inputdark: #3a3f3f;
         }
     }
 
+    .edit {
+        background-color: $outerdark;
+
+        .card {
+            background-color: $innerdark;
+
+            h2 {
+                color: $lighter;
+            }
+
+            .dname {
+                background-color: $outerdark;
+            }
+        }
+    }
+
     .sidebar {
         background-color: $innerdark;
     }
@@ -487,12 +503,109 @@ $inputdark: #3a3f3f;
 }
 
 
-.editpfp {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
+.edit {
+    width: 100vw;
+    height: 100vh;
+    background-color: $dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    .card {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: $light;
+
+        p {
+            padding: 10px 0;
+            font-weight: bold;
+            color: $darker;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: $darker;
+        }
+
+
+    }
+
+    .forms {
+        text-align: center;
+        overflow-x: hidden;
+
+        .dname {
+            width: 175px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            border: none;
+            outline-style: solid;
+            outline-color: transparent;
+            outline-width: 3px;
+            transition: 0.7s;
+            &::placeholder {
+                color: $font;
+            }
+            &:focus {
+                outline-style: solid;
+                outline-color: $outline;
+            }
+        }
+
+        .dbutton {
+            width: 175px;
+            background-color: $dark;
+            color: $fontdark;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: 0.7s;
+
+            &:hover {
+                background-color: #4b5849;
+                color: $lighter;
+            }
+        }
+
+        #file {
+            margin-left: 5em;
+        }
+    }
+
+    .editpfp {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 1px 1px 10px #000000;
+    }
+
+    .homebutton {
+        width: 75px;
+        background-color: $font;
+        color: $light;
+        font-weight: bold;
+        margin-top: 1em;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.7s;
+
+        &:hover {
+            background-color: #85c5c9;
+            color: $lighter;
+        }
+    }
+
 }
+
+
 //switch
 
 .switch {

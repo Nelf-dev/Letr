@@ -62,15 +62,33 @@ const Edit = () => {
 
         console.log(currentUser.photoURL)
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-            <img className="editpfp" src={currentUser.photoURL} alt="displayicon"/>
-            <label htmlFor="file">Change your profile picture</label>
-            <input type="file" id="file"/>
-            <input type="text" placeholder="Display name" defaultValue={currentUser.displayName} />
-            <button>Update Profile</button>
-            <p><Link to="/">Home</Link></p>
-            </form>
+        <div className="edit">
+            <div className="card">
+                <div>
+                    <h2>Edit Profile</h2>
+                </div>
+                <div>
+                    <img className="editpfp" src={currentUser.photoURL} alt="displayicon"/>
+                </div>
+                <div>
+                    <p>Change your profile picture</p>
+                </div>
+                <div className="forms">
+                    <form onSubmit={handleSubmit}>
+                    <div>
+                        <input type="file" id="file"/>
+                    </div>
+                    <div>
+                        <p>Display name</p>
+                    </div>
+                    <div>
+                        <input className="dname" type="text" placeholder="Display name" defaultValue={currentUser.displayName} />
+                    </div>
+                        <button className="dbutton">Update Profile</button>
+                    </form>
+                </div>
+                <Link to="/"><button className="homebutton">Home</button></Link>
+            </div>
         </div>
     );
 }
