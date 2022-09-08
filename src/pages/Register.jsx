@@ -9,14 +9,6 @@ import { useNavigate, Link } from 'react-router-dom';
 const Register = () => {
     const [err,setErr] = useState(null)
     const navigate = useNavigate()
-    // const { currentUser } = useContext(AuthContext) 
-
-    // useEffect(() => { //does not allow register again if not logged out
-    //     if (currentUser) {
-    //         navigate("/");
-    //     }
-    // }, []);
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -76,10 +68,10 @@ const Register = () => {
         <div className='formContainer'>
             <div className="formWrapper">
                 <div className="wave logo">
-                    <span style={{"--i":1}}>L</span>
-                    <span style={{"--i":2}}>E</span>
-                    <span style={{"--i":3}}>T</span>
-                    <span style={{"--i":4}}>R</span>
+                    <span style={ {"--i":1} }>L</span>
+                    <span style={ {"--i":2} }>E</span>
+                    <span style={ {"--i":3} }>T</span>
+                    <span style={ {"--i":4} }>R</span>
                 </div>
                 <span className="title">Register</span>
                 <form onSubmit={ handleSubmit }>

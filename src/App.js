@@ -33,14 +33,14 @@ function App() {
   // *******************
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={ {theme, toggleTheme} }>
       <div id={theme}>
         <div className="switch">
           <ReactSwitch 
           onChange={toggleTheme} 
-          checked={theme === "dark"}
-          checkedIcon={false}
-          uncheckedIcon={false}
+          checked={ theme === "dark" }
+          checkedIcon={ false }
+          uncheckedIcon={ false }
           onColor={"#272c36"}
           offColor={"#9fa3ac"}
           />
@@ -56,9 +56,9 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-              <Route path="edit" element={<Edit />} />
+              <Route path="login" element={ <Login /> } />
+              <Route path="register" element={ <Register /> } />
+              <Route path="edit" element={ <Edit /> } />
             </Route>
           </Routes>
         </BrowserRouter>
