@@ -281,7 +281,7 @@ $inputdark: #3a3f3f;
                 position: absolute;
                 margin-top: 4.3em;
                 width: 65%;
-                height: 73%;
+                height: 66%;
             }
 
         }
@@ -296,7 +296,7 @@ $inputdark: #3a3f3f;
             flex: 1;
 
             // @media  screen and (max-width: 480px) {
-            //     visibility: hidden;
+            //     // visibility: hidden;
 
             //     .sidebar.active {
             //         position: absolute;
@@ -320,6 +320,11 @@ $inputdark: #3a3f3f;
                 overflow: hidden;
                 width: 21.65%;
                 border-top-left-radius: 15px;
+
+                @media screen and (max-width: 480px) {
+                        width: 65%;
+                        border-top-left-radius: 0px;
+                }
 
                 .profilelink {
                     text-decoration: none;
