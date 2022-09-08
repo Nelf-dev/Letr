@@ -253,6 +253,10 @@ $inputdark: #3a3f3f;
             overflow: scroll;
             flex: 1;
 
+            @media  screen and (max-width: 480px) {
+                display: none;
+            }
+
             .navbar {
                 display: flex;
                 position: static;
