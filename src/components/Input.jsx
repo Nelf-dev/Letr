@@ -3,7 +3,6 @@ import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
 import Add from '../img/addimg.png';
 import attach from '../img/attach.png';
-import { async } from '@firebase/util';
 import { db, storage } from '../firebase';
 import { arrayUnion, doc, updateDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
 import { v4 as uuid } from 'uuid';
@@ -16,7 +15,9 @@ const Input = () => {
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext)
 
-    const handleSend = async () => {
+    const handleSend = async (e) => {
+
+        e.preventDefault()
 
         if(img) {
 
@@ -74,21 +75,21 @@ const Input = () => {
     };
 
     return (
-        <div className="input">
+        <form onSubmit={ handleSend } className="input">
             <input type="text" 
             placeholder="Type something..." 
             onChange={ e => setText(e.target.value) } 
             value={ text }
             />
             <div className="send">
-                <img src={attach} alt="" />
+                <img src={attach} alt="attachFile" />
                 <input type="file" style={{display: " none"}} id="file" onChange={ e => setImg(e.target.files[0]) } />
                 <label htmlFor="file">
-                    <img src={Add} alt="" />
+                    <img src={Add} alt="sendFile" />
                 </label>
                 <button onClick={ handleSend }>Send</button>
             </div>
-        </div>
+        </form>
     );
 }
 
