@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { getAuth, updateProfile } from "firebase/auth";
+import { getAuth, reload, updateProfile } from "firebase/auth";
 import { db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore"; 
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
@@ -33,6 +33,7 @@ const Edit = () => {
                             photoURL: URL,
                         });
                         console.log("Profile Updated");
+                        window.location.reload();
                     }).catch((error) => {
                         console.log(error);
                     })
@@ -48,6 +49,7 @@ const Edit = () => {
                         photoURL: "https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36",
                     });
                     console.log("Profile Updated");
+                    window.location.reload();
                 }).catch((error) => {
                     console.log(error);
                 })
