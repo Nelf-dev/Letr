@@ -33,7 +33,7 @@ const Message = ({ message }) => {
 
     return (
         <div ref={ ref } className={ `message ${ message.senderId === currentUser.uid && "owner" }` }>
-            <div className="messageInfo">
+            <div className={ `messageInfo ${ message.senderId === currentUser.uid && "owner"}`}>
                 <img src= { message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL }
                 alt="messageInfo" 
                 />
@@ -41,10 +41,14 @@ const Message = ({ message }) => {
                 <br />
                 <span> { toTime(message.date.seconds )} </span>
             </div>
+            {!message.img ?
             <div className="messageContent">
-                <p>{ message.text }</p>
-                { message.img && <img src= { message.img } alt="messageContent" />}
+            <p>{ message.text }</p>
             </div>
+            :
+            <div className="messageContent">
+                { message.img && <img src= { message.img } alt="messageContent" />}
+            </div> }
         </div>
     );
 }
