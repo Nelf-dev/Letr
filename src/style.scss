@@ -128,7 +128,7 @@ $inputdark: #3a3f3f;
 // }
 
 @mixin mobile {  // RESPONSIVE DESIGN
-    @media  screen and (max-width: 480px) {
+    @media  screen and (max-width: 400px) {
         @content;
     }
 }
@@ -271,21 +271,6 @@ $inputdark: #3a3f3f;
         height: 80%;
         display: flex;
         overflow: hidden;
-
-        @media  screen and (max-width: 480px) {
-            
-            .sidebar {
-                display: none;
-            }
-            .sidebar.active {
-                display: block;
-                position: absolute;
-                margin-top: 4.3em;
-                width: 65%;
-                height: 66%;
-            }
-
-        }
     
     .chattitle {
         padding: 10px;

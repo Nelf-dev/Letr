@@ -9,13 +9,13 @@ const Message = ({ message }) => {
 
     const ref = useRef();
 
-    const toDateTime = (secs) => {
-        const t = new Date(1970, 0, 1); // Epoch
-        t.setSeconds(secs);
-        let output = t.toDateString();
+    // const toDateTime = (secs) => {
+    //     const t = new Date(1970, 0, 1); // Epoch
+    //     t.setSeconds(secs);
+    //     let output = t.toDateString();
 
-        return output
-    }
+    //     return output
+    // }
 
     const toTime = (secs) => {
         const t = new Date(1970, 0, 1);
@@ -37,8 +37,8 @@ const Message = ({ message }) => {
                 <img src= { message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL }
                 alt="messageInfo" 
                 />
-                <span> { toDateTime(message.date.seconds) }  </span> 
-                <br />
+                {/* <span> { toDateTime(message.date.seconds) }  </span>  */}
+                {/* <br /> */}
                 <span> { toTime(message.date.seconds )} </span>
             </div>
             {!message.img ?
