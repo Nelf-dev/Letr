@@ -46,7 +46,8 @@ const Register = () => {
             
 
                 await setDoc(doc(db, "userChats", res.user.uid), {});
-                setTimeout(window.reload(), 1000);
+                navigate("/");
+                setTimeout(window.location.reload(), 1000);
 
             });
         }
