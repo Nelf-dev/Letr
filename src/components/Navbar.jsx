@@ -12,7 +12,7 @@ const Navbar = () => {
             <span className="logo">Letr</span>
             <div className="user">
                 <Link to="/edit"><img src={currentUser.photoURL} alt="displayicon" /></Link>
-                <span><Link to="/edit">{currentUser.displayName}</Link></span>
+                <span><Link to="/edit" className="profilelink">{currentUser.displayName}</Link></span>
                 <button onClick={()=>signOut(auth)}>Log Out</button>
             </div>
         </div>

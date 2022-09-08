@@ -4,7 +4,7 @@ $font : #595958;
 $fontdark: #4a504f;
 $button : #58bee6;
 $textbackground: #eaf2ff;
-$buttonyes : rgb(50, 237, 43); 
+$buttonyes : rgb(121, 216, 118); 
 $black: #2a2e2e;
 $darker: #495464;
 $dark: #BBBFCA;
@@ -292,6 +292,17 @@ $inputdark: #3a3f3f;
                 padding: 10px;
                 justify-content: space-between;
 
+                .profilelink {
+                    text-decoration: none;
+                    color: $lighter;
+                    border-bottom: 1px solid transparent;
+                    transition: 0.3s;
+
+                    &:hover {
+                        border-bottom: 1px solid white;
+                    }
+                }
+
                 .logo {
                     font-weight: bold;
                     font-size: 18pt;
@@ -303,6 +314,8 @@ $inputdark: #3a3f3f;
                 .user {
                     display: flex;
                     gap: 10px;
+                    vertical-align: center;
+                    max-height: 24px;
                 }
 
                 img {
