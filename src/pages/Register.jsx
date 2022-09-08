@@ -9,14 +9,6 @@ import { useNavigate, Link } from 'react-router-dom';
 const Register = () => {
     const [err,setErr] = useState(null)
     const navigate = useNavigate()
-    // const { currentUser } = useContext(AuthContext) 
-
-    // useEffect(() => { //does not allow register again if not logged out
-    //     if (currentUser) {
-    //         navigate("/");
-    //     }
-    // }, []);
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
