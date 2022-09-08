@@ -4,7 +4,7 @@ $font : #595958;
 $fontdark: #4a504f;
 $button : #58bee6;
 $textbackground: #eaf2ff;
-$buttonyes : rgb(132, 183, 130); 
+$buttonyes : rgb(50, 237, 43); 
 $black: #2a2e2e;
 $darker: #495464;
 $dark: #BBBFCA;
@@ -407,7 +407,7 @@ $inputdark: #3a3f3f;
                         gap: 10px;
 
                         p {
-                            background-color: white;
+                            background-color: rgba(14, 14, 14, 0.513);
                             padding: 10px 20px;
                             border-radius: 0px 10px 10px 10px;
                             max-width: max-content;
@@ -469,6 +469,7 @@ $inputdark: #3a3f3f;
                         padding: 10px 15px;
                         color: white;
                         background-color: $buttonyes;
+                        border-radius: 15px 15px 15px 15px;
                     }
                 }
             }
