@@ -5,7 +5,7 @@ import { auth } from '../firebase';
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-    const {currentUser} = useContext(AuthContext)
+    const { currentUser } = useContext(AuthContext)
 
     return (
         <div className="navbar">

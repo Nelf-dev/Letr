@@ -68,13 +68,13 @@ const Edit = () => {
                     <h2>Edit Profile</h2>
                 </div>
                 <div>
-                    <img className="editpfp" src={currentUser.photoURL} alt="displayicon"/>
+                    <img className="editpfp" src={ currentUser.photoURL } alt="displayicon"/>
                 </div>
                 <div>
                     <p>Change your profile picture</p>
                 </div>
                 <div className="forms">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={ handleSubmit }>
                     <div>
                         <input type="file" id="file"/>
                     </div>
@@ -82,7 +82,7 @@ const Edit = () => {
                         <p>Display name</p>
                     </div>
                     <div>
-                        <input className="dname" type="text" placeholder="Display name" defaultValue={currentUser.displayName} />
+                        <input className="dname" type="text" placeholder="Display name" defaultValue={ currentUser.displayName } />
                     </div>
                         <button className="dbutton">Update Profile</button>
                     </form>
