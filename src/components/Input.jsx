@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
 import Add from '../img/addimg.png';
-import attach from '../img/attach.png';
 import { db, storage } from '../firebase';
 import { arrayUnion, doc, updateDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
 import { v4 as uuid } from 'uuid';
@@ -82,7 +81,6 @@ const Input = () => {
             value={ text }
             />
             <div className="send">
-                <img src={attach} alt="attachFile" />
                 <input type="file" style={{display: " none"}} id="file" onChange={ e => setImg(e.target.files[0]) } />
                 <label htmlFor="file">
                     <img src={Add} alt="sendFile" />
