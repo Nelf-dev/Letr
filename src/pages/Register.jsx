@@ -50,7 +50,7 @@ const Register = () => {
                 });
 
                 await setDoc(doc(db, "userChats", res.user.uid), {});
-                navigate("/");
+                setTimeout(window.reload(), 1000);
 
             });
         }
@@ -71,17 +71,17 @@ const Register = () => {
                     <span style={{"--i":4}}>R</span>
                 </div>
                 <span className="title">Register</span>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={ handleSubmit }>
                     <input type="text" placeholder="Display name"/>
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
-                    <input style={{display:"none"}} type="file" id="file"/>
+                    <input style={ {display:"none"} } type="file" id="file"/>
                     <label htmlFor="file">
                         <img src={Add} />
                         <span>Add an Avatar</span>
                     </label>
                     <button>Sign Up</button>
-                    {err && <span>{err.message}</span>}
+                    {err && <span>{ err.message }</span>}
                 </form>
                 <p>Have an account? <Link to="/login">Login</Link></p>
             </div>
