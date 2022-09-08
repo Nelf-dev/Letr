@@ -28,25 +28,22 @@ const Register = () => {
     try{
         const res = await createUserWithEmailAndPassword(auth, email, password)
         const storageRef = ref(storage, displayName);
+        if (file) {
         const uploadTask = uploadBytesResumable(storageRef, file);
-
         uploadTask.on(
-        
-        (error) => {
-            setErr(true)
-        }, 
-        () => {
+        (error) => { setErr(true) }, () => {
             getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
                 await updateProfile(res.user,{
                     displayName,
-                    photoURL: downloadURL ? downloadURL : 'https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36'
+                    photoURL: downloadURL,
                 });
                 await setDoc(doc(db, "users", res.user.uid),{
                     uid: res.user.uid,
                     displayName,
                     email,
-                    photoURL: downloadURL ? downloadURL : 'https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36'
+                    photoURL: downloadURL,
                 });
+            
 
                 await setDoc(doc(db, "userChats", res.user.uid), {});
                 navigate("/");
@@ -54,6 +51,20 @@ const Register = () => {
             });
         }
         );
+        } else {
+            await updateProfile(res.user,{
+                displayName,
+                photoURL: 'https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36'
+            });
+            await setDoc(doc(db, "users", res.user.uid),{
+                uid: res.user.uid,
+                displayName,
+                email,
+                photoURL: 'https://firebasestorage.googleapis.com/v0/b/letr-c11e5.appspot.com/o/default-avatar.jpg?alt=media&token=19e3a9b0-49c6-4c25-88bb-56e7f50bbc36'
+            });
+            await setDoc(doc(db, "userChats", res.user.uid), {});
+            navigate("/");
+        }
     }catch(err){
         setErr(err);
     }
