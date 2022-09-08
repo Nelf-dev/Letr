@@ -29,7 +29,7 @@ const Message = ({ message }) => {
         ref.current?.scrollIntoView({ behavior: "smooth" })
     }, [ message ]);
 
-    console.log(toDateTime(message.date.seconds))
+    console.log(message)
 
     return (
         <div ref={ ref } className={ `message ${ message.senderId === currentUser.uid && "owner" }` }>
@@ -37,7 +37,7 @@ const Message = ({ message }) => {
                 <img src= { message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL }
                 alt="messageInfo" 
                 />
-                {/* <span> { toDateTime(message.date.seconds) }  </span>  */}
+                <span> { toDateTime(message.date.seconds) }  </span> 
                 <br />
                 <span> { toTime(message.date.seconds )} </span>
             </div>

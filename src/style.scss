@@ -243,6 +243,21 @@ $inputdark: #3a3f3f;
         height: 80%;
         display: flex;
         overflow: hidden;
+
+        @media  screen and (max-width: 480px) {
+            
+            .sidebar {
+                display: none;
+            }
+            .sidebar.active {
+                display: block;
+                position: absolute;
+                margin-top: 4.3em;
+                width: 65%;
+                height: 73%;
+            }
+
+        }
     
     .chattitle {
         padding: 10px;
@@ -252,10 +267,6 @@ $inputdark: #3a3f3f;
             border-right: 0.5px black solid;
             overflow: scroll;
             flex: 1;
-
-            @media  screen and (max-width: 480px) {
-                visibility: hidden;
-            }
 
             .navbar {
                 display: flex;
@@ -393,11 +404,15 @@ $inputdark: #3a3f3f;
                         color: gray;
                         font-weight: 300;
                         margin-bottom: 20px;
+                        align-items: center;
                         img{
                             width: 40px;
                             height: 40px;
                             border-radius: 50%;
                             object-fit: cover;
+                        }
+                        span {
+                            font-size: 9px;
                         }
                     }
                     .messageContent {
