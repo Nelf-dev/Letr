@@ -40,12 +40,3 @@
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
-.sidebar.active {
-    position: absolute;
-    margin-top: 4.3em;
-    visibility: visible!;
-    width: 65%;
-    height: 73%;
-    z-index: 999;
-    }
