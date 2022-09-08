@@ -442,6 +442,9 @@ $inputdark: #3a3f3f;
                             border-radius: 50%;
                             object-fit: cover;
                         }
+                        span {
+                            font-size: 8pt;
+                        }
                     }
                     .messageContent {
                         max-width: 80%;
@@ -451,13 +454,14 @@ $inputdark: #3a3f3f;
 
                         p {
                             background-color: rgba(14, 14, 14, 0.513);
+                            color: $light;
                             padding: 10px 20px;
                             border-radius: 0px 10px 10px 10px;
-                            max-width: max-content;
+                            min-width: min-content;
                         }
 
                         img {
-                            width: 50%;
+                            max-width: 50%;
                             margin-bottom: 10px;
                         }
                     }
