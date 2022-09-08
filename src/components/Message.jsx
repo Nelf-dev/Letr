@@ -6,13 +6,30 @@ const Message = ({ message }) => {
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext)
 
+
     const ref = useRef();
+
+    const toDateTime = (secs) => {
+        const t = new Date(1970, 0, 1); // Epoch
+        t.setSeconds(secs);
+        let output = t.toDateString();
+
+        return output
+    }
+
+    const toTime = (secs) => {
+        const t = new Date(1970, 0, 1);
+        t.setSeconds(secs - 50400)
+        let output = t.toLocaleTimeString();
+
+        return output
+    }
 
     useEffect( () => {
         ref.current?.scrollIntoView({ behavior: "smooth" })
     }, [ message ]);
 
-    console.log(message)
+    console.log(toDateTime(message.date.seconds))
 
     return (
         <div ref={ ref } className={ `message ${ message.senderId === currentUser.uid && "owner" }` }>
@@ -20,7 +37,9 @@ const Message = ({ message }) => {
                 <img src= { message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL }
                 alt="messageInfo" 
                 />
-                <span>Just Now</span>
+                {/* <span> { toDateTime(message.date.seconds) }  </span>  */}
+                <br />
+                <span> { toTime(message.date.seconds )} </span>
             </div>
             <div className="messageContent">
                 <p>{ message.text }</p>
