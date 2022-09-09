@@ -8,7 +8,7 @@ Simple messaging app with these features:
 
 Dark and light mode switch.
 
-Insant messaging between another profile.
+Insant messaging between other profiles.
 
 Edit page (edit your profile picture and name).
 
