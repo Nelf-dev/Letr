@@ -178,10 +178,12 @@ $inputdark: #3a3f3f;
         align-items: center;
         box-shadow: 1px 1px 1px #000000;
         max-width: 375px;
+
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
+
             input {
                 background-color: $lighter;
                 padding: 15px;
@@ -214,7 +216,7 @@ $inputdark: #3a3f3f;
             width: 250px;
             text-align: center;
         }
-        
+
         button {
             background-color: $dark;
             color: $fontdark;
@@ -280,19 +282,6 @@ $inputdark: #3a3f3f;
             border-right: 0.5px black solid;
             overflow: scroll;
             flex: 1;
-
-            // @media  screen and (max-width: 480px) {
-            //     // visibility: hidden;
-
-            //     .sidebar.active {
-            //         position: absolute;
-            //         margin-top: 4.3em;
-            //         visibility: visible;
-            //         width: 65%;
-            //         height: 73%;
-            //         z-index: 999;
-            //         }
-            // }
 
             .navbar {
                 display: flex;

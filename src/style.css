@@ -17,11 +17,23 @@
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
+
+    .home .container { 
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .switch {
+        padding: 0px;
+        border: 0;
+        border-radius: 15px;
+    }
 
     p {
         margin-top: 0.5em;
-        font-size: 8pt;
+        font-size: 12pt;
     }
 
     .bar {
@@ -37,10 +49,14 @@
         position: fixed;
         cursor: pointer;
         margin-left: 3em;
-        top: 14%;
-        right: 23%;
+        top: 4%;
+        right: 5%;
         visibility: visible;
         z-index: 999;
+    }
+
+    .hamburger:hover {
+        width: 5%;
     }
     
     .hamburger.active .bar:nth-child(2) {
@@ -57,13 +73,13 @@
 
     .sidebar {
         position: absolute;
-        margin-top: 0.7em;
+        /* margin-top: 0.7em; */
         width: 65%;
-        height: 78%;
+        height: 93.5%;
         z-index: 999;
         visibility: hidden;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        /* border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px; */
         transition: all 0.3s ease-in-out;
     }
     .user {
@@ -72,7 +88,7 @@
     }
     
     .sidebar.active {
-        visibility: visible
+        visibility: visible;
         }
 
     }
