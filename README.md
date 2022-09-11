@@ -8,7 +8,7 @@ Simple messaging app with these features:
 
 Dark & light mode switch.
 
-Insant messaging between profiles.
+Instant messaging between profiles.
 
 Edit page (edit your profile picture & name).
 
@@ -28,13 +28,13 @@ Mobile & browser friendly.
 
 1. You can also switch between dark & light mode. (toggle button on the top right).
 
-1. Enjoy & have fun messaing your friends!
+1. Enjoy & have fun messaging your friends!
 
 **Website Video Preview**
 
 Click this image link to youtube for a video demo.
 
-[![Link to video](Playbutton.png)]()
+[![Link to video](Playbutton.png)](https://youtu.be/nBcu8pfUrbI)
 
 **Tech Stack**
 
@@ -47,9 +47,11 @@ Click this image link to youtube for a video demo.
 
 **Firebase**
 
-We had three firebase collections = chats, users & userChats.  
+We had three firebase collections.
 
-![Firebase collections]()
+ - Chats
+ - Users
+ - UserChats 
 
 **Special Thanks**
 
