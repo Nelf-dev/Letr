@@ -5,7 +5,7 @@
 Please use the following credentials for easy access.
 
 Email: harry@ga.co
-Password: chicken
+Password: chicken420
 
 **Info**
 
