@@ -2,6 +2,11 @@
 
 [Click Here](https://storied-seahorse-83953f.netlify.app/) to access the application.
 
+Please use the following credentials for easy access.
+
+Email: harry@ga.co
+Password: chicken
+
 **Info**
 
 Simple messaging app with these features:
