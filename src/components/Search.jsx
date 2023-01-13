@@ -11,24 +11,17 @@ const Search = () => {
   const { currentUser } = useContext(AuthContext);
 
   const handleSearch = async () => {
-    const q = query(
-      collection(db, "users"),
-      where("displayName", "==", username)
-    );
+    const q = query(collection(db, "users"),where("displayName", "==", username));
 
-    try {
-      const querySnapshot = await getDocs(q);
-      setErr(false);
-      if (querySnapshot.size === 0){
-        setErr(true);
-      }
-      querySnapshot.forEach((doc) => {
-        setUser(doc.data()); 
-      });
-    } catch (err) {
-      console.log(err)
+    const querySnapshot = await getDocs(q);
+    setErr(false);
+    if (querySnapshot.size === 0){
       setErr(true);
-    }
+      return;
+    } 
+    querySnapshot.forEach((doc) => {
+      setUser(doc.data());
+    })
   };
 
   const handleKey = (e) => {
