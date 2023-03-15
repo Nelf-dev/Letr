@@ -49,6 +49,14 @@ const Login = () => {
                     {err && <span id="err">Please put in correct details.</span>}
                 </form>
                 <p>Don't have an account? <Link to="/register">Register</Link></p>
+                <div className='demo'>
+                <p>Like to use the demo account?</p>
+                <p>
+                    <b>Email </b>: harry@ga.co
+                    <br />
+                    <b>Password </b>: chicken420
+                </p>
+                </div>
             </div>
         </div>
     );
